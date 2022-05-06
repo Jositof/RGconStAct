@@ -15,3 +15,12 @@ variable "stgactname" {
   default     = "stoact06mayo2022"
   description = "Este es el nombre de la Cuenta de Almacenamiento"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "Tags used for the deployment"
+  default = {
+    "Environment" = "Lab"
+    "Owner"       = "Nanfor-Demo"
+  }
+}

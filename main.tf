@@ -16,6 +16,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "demo_rg" {
   name     = var.rgname
   location = var.location
+  tags = var.tags
 }
 resource "azurerm_storage_account" "stoacctdemo" {
   name                     = var.stgactname
@@ -23,4 +24,5 @@ resource "azurerm_storage_account" "stoacctdemo" {
   location                 = azurerm_resource_group.demo_rg.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
+  tags = var.tags
 }
